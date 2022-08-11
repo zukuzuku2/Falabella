@@ -4,7 +4,7 @@ import driver.DriverContext;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import testClasses.CPA001IngresarAPaginaBuggyCarYRegistrarseCorrectamente;
+import testClasses.*;
 
 import static constants.Navegador.FIREFOX;
 import static driver.DriverContext.quitDriver;
@@ -26,5 +26,28 @@ public class BuggyCars{
     public void CPA001IngresarAPaginaBuggyCarYRegistrarseCorrectamente(){
         CPA001IngresarAPaginaBuggyCarYRegistrarseCorrectamente mensajero = new CPA001IngresarAPaginaBuggyCarYRegistrarseCorrectamente();
         mensajero.validarFrontEnd();
+    }
+    @Test
+    public void CPA002IngrearAPaginaBuggyCarYTratarDeRegistrarseCamposVacios(){
+        CPA002IngresarAPaginaBuggyCarYTratarDeRegistrarseCamposVacios mensajero = new CPA002IngresarAPaginaBuggyCarYTratarDeRegistrarseCamposVacios();
+        mensajero.validarFrontEnd();
+    }
+
+    @Test
+    public void CPA003IngrearAPaginaBuggyCarYTratarDeRegistrarseUsuarioConPasswordDe4Caracteres(){
+        CPA003IngresarAPaginaBuggyCarYTratarDeRegistrarseUsuarioConPasswordDe4Caracteres mensajero = new CPA003IngresarAPaginaBuggyCarYTratarDeRegistrarseUsuarioConPasswordDe4Caracteres();
+        mensajero.validarFrontEnd();
+    }
+
+    @Test
+    public void CPA004IngresarAPaginaBuggyCarYLoguearseCOnUsuarioAntesRegistrado(){
+        CPA004IngresarAPaginaBuggyCarYLoguearseCOnUsuarioAntesRegistrado mensajero = new CPA004IngresarAPaginaBuggyCarYLoguearseCOnUsuarioAntesRegistrado();
+        mensajero.validarFrontEnd();
+    }
+
+    @Test
+    public void CPA005IngresarAPaginaBuggyCarYChequearLosModelosDeAlfaRomeo(){
+        CPA005IngresarAPaginaBuggyCarYChequearLosModelosDeAlfaRomeo mensajero = new CPA005IngresarAPaginaBuggyCarYChequearLosModelosDeAlfaRomeo();
+        mensajero.validacionFrontEnd();
     }
 }

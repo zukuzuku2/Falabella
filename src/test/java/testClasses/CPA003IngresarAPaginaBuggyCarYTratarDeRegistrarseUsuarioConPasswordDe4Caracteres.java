@@ -3,12 +3,19 @@ package testClasses;
 import pages.dashboardInicio.DashboardInicio;
 import pages.registerPage.PaginaDeRegistro;
 
-public class CPA002IngrearAPaginaBuggyCarYTratarDeRegistrarseCamposVacios {
+public class CPA003IngresarAPaginaBuggyCarYTratarDeRegistrarseUsuarioConPasswordDe4Caracteres {
+
     private String tituloPaginaPrincipal = "Buggy Cars Rating";
+
+    private String nickName = "ana";
+    private String nombre = "Anathan";
+    private String apellido = "Pham";
+    private String pass = "anad";
+    private String repass = "anad";
     private DashboardInicio dashboardInicio;
     private PaginaDeRegistro paginaDeRegistro;
 
-    public void validarFrontEnd(){
+    public void validarFrontEnd() {
         dashboardInicio = new DashboardInicio();
         dashboardInicio.validarPaginaPrincipal(tituloPaginaPrincipal);
         dashboardInicio.clickOpcionRegistrar();
@@ -18,8 +25,13 @@ public class CPA002IngrearAPaginaBuggyCarYTratarDeRegistrarseCamposVacios {
         paginaDeRegistro.validarCampoLastName();
         paginaDeRegistro.validarCampoPassword();
         paginaDeRegistro.validarCampoConfirmPassword();
-        paginaDeRegistro.validarBotonCancel();
         paginaDeRegistro.validarbtnRegisterDeshabilitado();
+        paginaDeRegistro.validarBotonCancel();
+        paginaDeRegistro.ingresarDatosEntrada(nickName, nombre, apellido, pass, repass);
+        paginaDeRegistro.validarbtnRegisterHabilitado();
+        paginaDeRegistro.clickBtnRegistar();
+        paginaDeRegistro.validarTextoPassIncorrecto();
     }
+
 
 }
