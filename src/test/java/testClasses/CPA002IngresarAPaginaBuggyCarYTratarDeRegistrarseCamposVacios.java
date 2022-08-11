@@ -3,7 +3,7 @@ package testClasses;
 import pages.dashboardInicio.DashboardInicio;
 import pages.registerPage.PaginaDeRegistro;
 
-public class CPA002IngrearAPaginaBuggyCarYTratarDeRegistrarseCamposVacios {
+public class CPA002IngresarAPaginaBuggyCarYTratarDeRegistrarseCamposVacios {
     private String tituloPaginaPrincipal = "Buggy Cars Rating";
     private DashboardInicio dashboardInicio;
     private PaginaDeRegistro paginaDeRegistro;
