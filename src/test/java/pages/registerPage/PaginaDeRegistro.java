@@ -274,16 +274,20 @@ public class PaginaDeRegistro {
         }
     }
 
-    public void validarTextoPassIncorrecto(String mensaje){
-        System.out.println("\n Comienza Metodo --> validarRegistroExitoso \n");
+    /**
+     * Se utiliza para validar que se muestre ek texto de Pass Incorrecto
+     * al ingrear un pass de 4 digitos
+     */
+    public void validarTextoPassIncorrecto(){
+        System.out.println("\n Comienza Metodo --> validarTextoPassIncorrecto \n");
         try {
             if (visualizarObjeto(lblTextoPassIncorrecto, 10)){
-                System.out.println("Se genera el Texto de Pass Incorrecto");
-                assertTrue("Se genera el texto de Pass Incorrecto", true);
+                assertTrue("Se visualiza correctamente el texto de Pass Incorrecto", true);
             }else {
                 fail("No se visualiza el elemento --> Texto Pass Incorrecto");
             }
         } catch (NoSuchElementException ex) {
+            System.out.println(ex.getMessage());
             fail("Se genero la siguiente excepcion " + ex.getMessage());
         }
     }

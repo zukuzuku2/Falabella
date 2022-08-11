@@ -3,7 +3,7 @@ package testClasses;
 import pages.dashboardInicio.DashboardInicio;
 import pages.registerPage.PaginaDeRegistro;
 
-public class CPM003IngrearAPaginaBuggyCarYTratarDeRegistrarseUsuarioConPasswordDe4Caracteres {
+public class CPA003IngrearAPaginaBuggyCarYTratarDeRegistrarseUsuarioConPasswordDe4Caracteres {
 
     private String tituloPaginaPrincipal = "Buggy Cars Rating";
 
@@ -30,6 +30,7 @@ public class CPM003IngrearAPaginaBuggyCarYTratarDeRegistrarseUsuarioConPasswordD
         paginaDeRegistro.ingresarDatosEntrada(nickName, nombre, apellido, pass, repass);
         paginaDeRegistro.validarbtnRegisterHabilitado();
         paginaDeRegistro.clickBtnRegistar();
+        paginaDeRegistro.validarTextoPassIncorrecto();
     }
 
 
