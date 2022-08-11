@@ -2,9 +2,8 @@ package testClasses;
 
 import pages.LogedPage.PaginaUsuarioLogueado;
 import pages.dashboardInicio.DashboardInicio;
-import pages.registerPage.PaginaDeRegistro;
 
-public class CPM004IngresarAPaginaBuggyCarYLoguearseCOnUsuarioAntesRegistrado {
+public class CPA004IngresarAPaginaBuggyCarYLoguearseCOnUsuarioAntesRegistrado {
 
     private String tituloPaginaPrincipal = "Buggy Cars Rating";
     private String nickName = "miracle";

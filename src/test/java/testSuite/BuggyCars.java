@@ -7,7 +7,7 @@ import org.junit.Test;
 import testClasses.CPA001IngresarAPaginaBuggyCarYRegistrarseCorrectamente;
 import testClasses.CPA002IngresarAPaginaBuggyCarYTratarDeRegistrarseCamposVacios;
 import testClasses.CPA003IngresarAPaginaBuggyCarYTratarDeRegistrarseUsuarioConPasswordDe4Caracteres;
-import testClasses.CPM004IngresarAPaginaBuggyCarYLoguearseCOnUsuarioAntesRegistrado;
+import testClasses.CPA004IngresarAPaginaBuggyCarYLoguearseCOnUsuarioAntesRegistrado;
 
 import static constants.Navegador.FIREFOX;
 import static driver.DriverContext.quitDriver;
@@ -43,8 +43,8 @@ public class BuggyCars{
     }
 
     @Test
-    public void CPM004IngresarAPaginaBuggyCarYLoguearseCOnUsuarioAntesRegistrado(){
-        CPM004IngresarAPaginaBuggyCarYLoguearseCOnUsuarioAntesRegistrado mensajero = new CPM004IngresarAPaginaBuggyCarYLoguearseCOnUsuarioAntesRegistrado();
+    public void CPA004IngresarAPaginaBuggyCarYLoguearseCOnUsuarioAntesRegistrado(){
+        CPA004IngresarAPaginaBuggyCarYLoguearseCOnUsuarioAntesRegistrado mensajero = new CPA004IngresarAPaginaBuggyCarYLoguearseCOnUsuarioAntesRegistrado();
         mensajero.validarFrontEnd();
     }
 }
