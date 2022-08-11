@@ -8,6 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 import static org.testng.AssertJUnit.assertTrue;
 import static org.testng.AssertJUnit.fail;
 import static utils.AccionesControladas.visualizarObjeto;
@@ -32,6 +34,12 @@ public class DashboardInicio {
 
     @FindBy(xpath = "/html/body/my-app/header/nav/div/my-login/div/form/button")
     private WebElement btnLogin;
+
+    @FindBy(xpath = "/html/body/my-app/div/main/my-home/div/div/div/div/h3")
+    private List<WebElement> marcaAutos;
+
+    @FindBy(xpath = "/html/body/my-app/div/main/my-home/div/div/div/a/img")
+    private List<WebElement> imgAutos;
 
     /**
      * Validamos que nos encontremos en la pagina principal del sitio indicado por el caso de prueba
@@ -175,4 +183,25 @@ public class DashboardInicio {
         }
 
     }
+
+    /**
+     * Validamos que exista al menos una marca Alfa Romeo
+     */
+    public void validarYAccederaMarcaAutos(String marcaEsperada) {
+        System.out.println("\n Comienza Metodo --> validarMarcaAutos \n");
+        try {
+            for (int i = 0; i <= marcaAutos.size(); i++) {
+                if (marcaAutos.get(i).getText().contains(marcaEsperada)) {
+                    imgAutos.get(i).click();
+                    assertTrue("Se clickea correctamente la primera marca del tipo " + marcaEsperada, true);
+                    break;
+                }
+            }
+
+        } catch (NoSuchElementException ex) {
+            System.out.println("Se genera la siguiente excepcion " + ex.getMessage());
+            Assert.fail("Se genera la siguiente excepcion " + ex.getMessage());
+        }
+    }
+
 }
