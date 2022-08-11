@@ -45,6 +45,9 @@ public class PaginaDeRegistro {
     @FindBy(xpath = "/html/body/my-app/div/main/my-register/div/div/form/div[6]")
     private WebElement lblRegistroExitoso;
 
+    @FindBy(xpath = "/html/body/my-app/div/main/my-register/div/div/form/div[6]")
+    private WebElement lblTextoPassIncorrecto;
+
     /**
      * Validamos el campo de Login, teniendo en cuenta su cajon de texto, para luego en otro metodo enviarle texto
      */
@@ -200,6 +203,7 @@ public class PaginaDeRegistro {
             boxPassword.sendKeys(pass);
             Thread.sleep(1000);
             boxConfirmPass.sendKeys(repass);
+            assertTrue("Se envian correctamente los textos a sus respectivas cajas", true);
         } catch (InterruptedException | NullPointerException ex) {
             fail("Se genero la siguiente excepcion " + ex.getMessage());
         }
@@ -241,7 +245,7 @@ public class PaginaDeRegistro {
             assertTrue("Se clickea correctamente el boton de registrar", true);
         } catch (NullPointerException ex) {
             System.out.println("Se genero al siguiente excepcion " + ex.getMessage());
-            System.out.println("Se genero al siguiente excepcion " + ex.getMessage());
+            fail("Se genero al siguiente excepcion " + ex.getMessage());
         }
     }
 
@@ -258,11 +262,26 @@ public class PaginaDeRegistro {
                     System.out.println("Registro exitoso");
                     assertTrue("Concuerdan los textos a validar", true);
                 } else {
-                    System.out.println("El texto esperado y es obtenido no coinciden");
+                    System.out.println("El texto esperado y el obtenido no coinciden");
+                    fail("El texto esperado y el obtenido no coinciden");
                 }
             } else {
                 System.out.println("No se visualiza el elemento de registro exitoso");
                 fail("No se visualiza el elemento de registro exitoso");
+            }
+        } catch (NoSuchElementException ex) {
+            fail("Se genero la siguiente excepcion " + ex.getMessage());
+        }
+    }
+
+    public void validarTextoPassIncorrecto(String mensaje){
+        System.out.println("\n Comienza Metodo --> validarRegistroExitoso \n");
+        try {
+            if (visualizarObjeto(lblTextoPassIncorrecto, 10)){
+                System.out.println("Se genera el Texto de Pass Incorrecto");
+                assertTrue("Se genera el texto de Pass Incorrecto", true);
+            }else {
+                fail("No se visualiza el elemento --> Texto Pass Incorrecto");
             }
         } catch (NoSuchElementException ex) {
             fail("Se genero la siguiente excepcion " + ex.getMessage());
